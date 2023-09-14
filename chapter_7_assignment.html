@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 7 Assignment</title>
+</head>
+<body> 
+    
+    <!-- background image -->
+    <style>
+       body {
+        background-image: url("plane.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100%;
+       }
+    </style>
+
+    <script>
+        // put variables INSIDE function
+        function submit() {
+            var startcity = document.getElementById("startcity").value;
+            var endcity = document.getElementById("endcity").value;
+            var startdate = document.getElementById("startdate").value;
+            var enddate = document.getElementById("enddate").value;
+            var traveler = 0;
+            numberoftravelers = document.getElementById("numberoftravelers").value; 
+            var checkBox = document.getElementById("Hotel"); 
+            
+            //for the hotel and car
+            //do this for checkboxes
+            //no need for ";" in the end
+            var hotel = ""
+            if (checkBox.checked == true)
+                hotel = "yes"
+            else if (checkBox.checked == false)
+                hotel = "no"
+
+            var car = ""
+            if (checkBox.checked == true)
+                car = "yes"
+            else if (checkBox.checked == false)
+                car = "no" 
+
+
+            //alert box
+            alert("Start City: " +startcity+ "\n End City: " +endcity+
+            "\n Start Date: " +startdate+ "\n End Date: " +enddate+
+            "\n Number of Travelers: " +numberoftravelers+ "\n Hotel: " + hotel + 
+            "\n Car: " + car);
+            
+            //switch-case for numberoftravelers
+            switch(numberoftravelers) {
+                case "1": 
+                    traveler = 1;
+                    break;
+                case "2": 
+                    traveler = 2;
+                    break; 
+                case "3": 
+                    traveler = 3;
+                    break; 
+                case "4": 
+                    traveler = 4;
+                    break; 
+                case "5": 
+                    traveler = 5;
+                    break; 
+                case "6": 
+                    traveler = 6;
+                    break; 
+                case "7": 
+                    traveler = 7;
+                    break; 
+                case "8": 
+                    traveler = 8;
+                    break; 
+                case "9": 
+                    traveler = 9;
+                    break;
+                case "10": 
+                    traveler = 10;
+                    break;
+            }
+
+            travelerElement = document.getElementById("traveler");
+            travelerElement.value = traveler;
+
+        }
+    
+    </script>
+
+    <h1> Travel Agent </h1>
+    <form">
+    <!-- Start City, End City, Start Date, End Date, Number of Travelers-->
+    <div style = "height: 20 px; width: 400 px;">
+        <label for = "startcity"> Start City </label>
+        <input type = "text" name = "startcity" id = "startcity">
+    </div>
+    <br/>
+
+    <div style = "height: 20 px; width: 400 px;">
+        <label for = "endcity"> End City </label>
+        <input type = "text" name = "endcity" id = "endcity">
+    </div>
+    <br/>
+
+    <div style = "height: 20 px; width: 400 px;">
+        <label for = "startdate"> Start Date </label>
+        <input type = "text" name = "startdate" id = "startdate">
+    </div>
+    <br/>
+
+    <div style = "height: 20 px; width: 400 px;">
+        <label for = "enddate"> End Date </label>
+        <input type = "text" name = "enddate" id = "enddate">
+    </div>
+    <br/>
+
+    <div style="height: 20px; width: 400px;">
+        <label for="numberoftravelers"> Number of Travelers </label>        
+        <select name="numberoftravelers" id="numberoftravelers">
+        
+        <option value = "1"> 1 </option>
+        
+        <option value = "2"> 2 </option>
+        
+        <option value = "3"> 3 </option>
+        
+        <option value = "4"> 4 </option>
+
+        <option value = "5"> 5 </option>
+        
+        <option value = "6"> 6 </option>
+        
+        <option value = "7"> 7 </option>
+        
+        <option value = "8"> 8 </option>
+
+        <option value = "9"> 9 </option>
+        
+        <option value = "10"> 10 </option>
+        
+        </select>        
+        </div>        
+        <br />
+
+        <!-- Hotel and Car checkboxes-->
+        <p> Check the following boxes if you want to add the following: </p>
+        <div class = "addOns">
+            <input type = "checkbox" value = "Hotel" id = "Hotel"> Hotel <br>
+            <input type = "checkbox" value = "Car" id = "Car"> Car <br>
+
+        </div>
+        <br> 
+
+        <!--Submit Button for alert box-->
+       <button type = "submit" onclick = "submit()"> Submit </button>
+        
+    </form>
+</body>
+</html>
